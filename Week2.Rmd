@@ -1,0 +1,31 @@
+---
+#title: "Leaflet_Map"
+#author: "Alex"
+#date: "January 31, 2017"
+#output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r, include=FALSE}
+
+library("leaflet")
+
+```
+
+## Welcome to the White House in Washington, DC!
+
+###Today's date is `r Sys.Date()`. Mr. Trump lives in the White House.
+
+```{r, echo=FALSE}
+library(leaflet)
+DC_Map <- leaflet() %>%
+  addTiles() %>%  
+  addMarkers(lng=-77.03652979999998, lat=38.8976763, popup="Mr Trump's House")
+```
+
+```{r, echo=FALSE}
+DC_Map
+```
+
